@@ -1,0 +1,34 @@
+{{>navbar}}
+
+<br />
+
+<table class="table">
+    <tbody>
+        {{#with user}}
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Name</td>
+            <td scope="col">{{first_name}} {{surname}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Email</td>
+            <td scope="col">{{email}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Phone Number</td>
+            <td scope="col">{{#if phone_number}}{{phone_number}}{{else}} -- {{/if}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Gender</td>
+            <td scope="col">{{gender}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Status</td>
+            <td scope="col">{{status}}</td>
+        </tr>
+        {{/with}}
+    </tbody>
+</table>

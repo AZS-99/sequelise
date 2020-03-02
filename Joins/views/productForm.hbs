@@ -1,0 +1,33 @@
+{{>navbar}}
+<br />
+{{!-- enctype for multer --}}
+<form method="POST" action="/create_product" enctype="multipart/form-data" class="col-md-12">
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-md-2 font-weight-bold">Label</label>
+        <input type="text" name="product_label" pattern="^[\w ]{2,200}$" class="form-control form-control-lg col-md-4"  required>
+    </div>
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-md-2 font-weight-bold">Description</label>
+        <textarea name="description" rows="4" class="form-control form-control-lg col-md-4"></textarea>
+    </div>
+
+
+    <div class="form-group row">
+        <label class="col-form-label col-form-label-lg col-md-2 font-weight-bold">Price</label>
+        <input type="number" step="0.01" min="1" max="9999" name="price" placeholder="9999.99" class="form-control form-control-lg col-md-4" title="Enter 2 decimal places"
+            required />
+    </div>
+
+    <div class="custom-file mb-3">
+        <input type="file" class="custom-file-input" name="product_image" required />
+        <label class="custom-file-label col-sm-6">Choose your product's image</label>
+    </div>
+
+    <div "form-group row">
+        <button type="submit" class="btn btn-primary">Add Product</button>
+        <button class="btn btn-danger">Cancel</button>
+    </div>
+
+</form>

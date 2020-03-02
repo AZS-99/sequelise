@@ -1,0 +1,18 @@
+
+<div class="card col-md-2 ">
+    
+    <a href="/product/{{product_id}}">
+        <img  class="img card-img-top ease-transition" src="/{{product_imageURL}}" alt="product image N/A" />
+    </a>
+    
+    <div class="card-body d-flex flex-column">
+        <h5 class="card-title mt-auto">{{product_label}}</h5>
+        <p class="card-text">CDN$ {{price}} {{#if number_of_items}} X{{number_of_items}} {{/if}} </p>
+        {{#if number_of_items}}
+        <a href="/removefromtrolley/{{product_id}}" class="btn btn-primary">Remove</a>
+        {{/if}}
+    </div>
+</div>
+
+
+

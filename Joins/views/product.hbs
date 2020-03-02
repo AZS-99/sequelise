@@ -1,0 +1,28 @@
+{{>navbar}}
+
+<br />
+
+
+<form class="col-sm-12 row" method="POST" action="/add_product_to_trolley">
+
+    {{#if user}}
+        <input type="hidden" name="userID" value="{{user.user_id}}" />
+    {{/if}}
+
+    {{#with product}}
+    <img class="col-sm-6 img img-fluid h-25" src="/{{product_imageURL}}" />
+    <div class="col-sm-6">
+        <h1 class="display-1 font-weight-bold">{{product_label}}</h1>
+        <p class="lead">{{description}}</p>
+        
+        <input type="hidden" name="product_id" value="{{product_id}}" />
+        <input type="number" name="number_of_items" min="1" max="9" value="1" class="col-sm-2" />
+        <button type="submit" class="btn btn-success" id="add_product_btn">Add to cart</button>
+    </div>
+    {{/with}}
+
+</form>
+
+
+
+
