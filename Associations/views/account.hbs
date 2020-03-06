@@ -1,0 +1,39 @@
+{{>navbar}}
+
+<br />
+
+<table class="table">
+    <tbody>
+        {{#with user}}
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Name</td>
+            <td scope="col">{{first_name}} {{surname}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Email</td>
+            <td scope="col">{{email}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Phone Number</td>
+            <td scope="col">{{#if phone_number}}{{phone_number}}{{else}} -- {{/if}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Gender</td>
+            <td scope="col">{{gender}}</td>
+        </tr>
+
+        <tr scope="row">
+            <td scope="col" class="font-weight-bold">Status</td>
+            <td scope="col">{{status}}</td>
+        </tr>
+        {{/with}}
+    </tbody>
+</table>
+
+<div class="col-sm-12 row">
+    <a class="btn btn-warning m-1" href="/edit_account">Edit Info</button>
+    <a class="btn btn-danger m-1" href="/change_password">Change Password</a>
+</div>

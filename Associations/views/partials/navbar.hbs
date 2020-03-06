@@ -1,0 +1,63 @@
+<nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <a class="nav-brand"></a>
+
+    <!-- collapsing into 3 lines when minimizing the web-page -->
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#efas-navbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+
+    <div class="collapse navbar-collapse" id="efas-navbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link lead font-weight-bold" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link lead font-weight-bold" href="/about">About</a>
+            </li>
+        </ul>
+
+        <form class="form-inline">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <button class="btn btn-outline-success" id="search-btn" type="submit"><i
+                            class="fa fa-search"></i></button>
+                </div>
+                <input class="form-control" type="search" placeholder="Search" aria-describedby="search-btn">
+            </div>
+
+        </form>
+
+        <ul class="navbar-nav ml-auto">
+            {{#if user}}
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold lead " href="/account">{{user.first_name}}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold lead " href="/log_out">Log out</a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold lead " href="/log_in">Log in</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold lead" href="/sign_up">Sign up</a>
+            </li>
+            {{/if}}
+            
+            {{#if user.admin}}
+            <li class="nav-item">
+                <a class="nav-link fas fa-cogs fa-lg" href="/manage_website"></a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+                <a class="nav-link font-weight-bold lead" href="/trolley">
+                    <i class="fas fa-shopping-cart fa-lg"><sub>{{user.count_items}}</sub></i>
+                </a>
+            </li>
+            {{/if}}
+            
+        </ul>
+    </div>
+
+</nav>

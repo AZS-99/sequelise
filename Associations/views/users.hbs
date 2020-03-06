@@ -1,0 +1,34 @@
+{{>navbar}}
+<form method="POST" action="/users">
+    <table class="table">
+        <thead>
+            <tr scope="row">
+                <th></th>
+                <th>User#</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th>Gender</th>
+                <th>Phone#</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {{#each users}}
+            <tr scope="row">
+                <td><input type="checkbox" name="emails" value="{{email}}" /></td>
+                <td>{{user_id}}</td>
+                <td>{{first_name}}</td>
+                <td>{{surname}}</td>
+                <td>{{gender}}</td>
+                <td>{{phone_number}}</td>
+                <td>{{email}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    
+    <button type="submit" name="btn" value="set_admin" class="btn btn-danger">Set as Admin</button>
+    <button type="submit" name="btn" value="view" class="btn btn-primary">View</button>
+</form>
